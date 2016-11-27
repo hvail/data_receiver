@@ -18,8 +18,8 @@ ENV MQ_RABBIT_NAME hvail
 ENV MQ_RABBIT_PASSWORD hvail
 EXPOSE 6001
 EXPOSE 22
-RUN git clone http://code.aliyun.com/415195993/jars.git /lib/jarlib/jars
+RUN git clone https://code.aliyun.com/kailong.zhang/data_receiver.git /var/docker/receiver
 RUN echo Start Receiver Program
 
-ENTRYPOINT java -jar /lib/jarlib/jars/GPSNetCore.GPSReceiver.jar
+ENTRYPOINT java -jar /var/docker/receiver/GPSNetCore.GPSReceiver.jar
 
