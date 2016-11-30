@@ -17,7 +17,7 @@ ENV MQ_RABBIT_HOST 10.172.99.178
 ENV MQ_RABBIT_NAME hvail
 ENV MQ_RABBIT_PASSWORD hvail
 EXPOSE 6001
-EXPOSE 22
+# EXPOSE 22
 RUN git clone https://code.aliyun.com/kailong.zhang/data_receiver.git /var/docker/receiver
 RUN echo Start Receiver Program
 
