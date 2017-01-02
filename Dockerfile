@@ -5,20 +5,21 @@ FROM ubuntu
 
 # Ç©Ãû
 MAINTAINER hvail "415195993@qq.com"
-# Install Java.
+
 RUN \
   apt-get update && \
-  apt-get install -y openjdk-8-jdk git openssh-server && \
+  apt-get install -y openjdk-8-jdk && \
   rm -rf /var/lib/apt/lists/*
 	
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 
-ENV LISTEN_PORT 6001
-ENV MQ_RABBIT_HOST 10.172.99.178
+ENV LISTEN_PORT 5990
+ENV MQ_RABBIT_HOST 10.1.2.156
 ENV MQ_RABBIT_NAME hvail
 ENV MQ_RABBIT_PASSWORD hvail
-EXPOSE 6001
-# EXPOSE 22
-RUN git clone https://code.aliyun.com/kailong.zhang/data_receiver.git /var/docker/receiver
+EXPOSE 5990
+
+ADD GPSNetCore.GPSReceiver.jar /var/docker/receiver/GPSNetCore.GPSReceiver.jar
+
 RUN echo Start Receiver Program
 
 ENTRYPOINT java -jar /var/docker/receiver/GPSNetCore.GPSReceiver.jar
