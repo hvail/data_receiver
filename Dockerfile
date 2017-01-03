@@ -6,8 +6,8 @@ FROM java:8
 # Ç©Ãû
 MAINTAINER hvail "415195993@qq.com"
 
-RUN rm -rf /var/lib/apt/lists/*
-	
+# RUN rm -rf /var/lib/apt/lists/*
+RUN ping -c 10 10.1.2.156
 # ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 
 ENV LISTEN_PORT 5990
 ENV MQ_RABBIT_HOST 10.1.2.156
