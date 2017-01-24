@@ -9,11 +9,11 @@ MAINTAINER hvail "415195993@qq.com"
 # RUN rm -rf /var/lib/apt/lists/*
 # RUN ping -c 10 10.1.2.156
 # ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 
-ENV LISTEN_PORT 5990
+ENV LISTEN_PORT 6001
 ENV MQ_RABBIT_HOST 10.1.2.156
 ENV MQ_RABBIT_NAME hvail
 ENV MQ_RABBIT_PASSWORD hvail
-EXPOSE 5990
+EXPOSE 6001
 
 ADD GPSNetCore.GPSReceiver.jar /var/docker/receiver/GPSNetCore.GPSReceiver.jar
 
