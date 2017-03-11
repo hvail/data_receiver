@@ -15,7 +15,8 @@ ENV MQ_RABBIT_NAME hvail
 ENV MQ_RABBIT_PASSWORD hvail
 EXPOSE 6001 6100
 
-ADD GPSNetCore.GPSReceiver.jar /var/docker/receiver/GPSNetCore.GPSReceiver.jar
+# ADD GPSNetCore.GPSReceiver.jar /var/docker/receiver/GPSNetCore.GPSReceiver.jar
+ADD / /var/docker/receiver/
 
 RUN echo Start Receiver Program
 
